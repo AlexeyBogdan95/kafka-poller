@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaPoller", "src\KafkaPoller\KafkaPoller.csproj", "{FE8AE1A9-991A-43DD-AA60-33C9EE6DCCC2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{2C7AC5F7-95F0-41AC-9072-0503B666FEF1}"
+	ProjectSection(SolutionItems) = preProject
+		build\docker-compose.yml = build\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{92C19B56-D959-41C9-8FEC-695386E163B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaPoller.Consumer", "tests\KafkaPoller.Consumer\KafkaPoller.Consumer.csproj", "{D77EEE6B-0A86-4DA6-915D-9EBD59C26E4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaPoller.Publisher", "tests\KafkaPoller.Publisher\KafkaPoller.Publisher.csproj", "{CA9820C2-E02E-400A-A768-BAF45268B3A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE8AE1A9-991A-43DD-AA60-33C9EE6DCCC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE8AE1A9-991A-43DD-AA60-33C9EE6DCCC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE8AE1A9-991A-43DD-AA60-33C9EE6DCCC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE8AE1A9-991A-43DD-AA60-33C9EE6DCCC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D77EEE6B-0A86-4DA6-915D-9EBD59C26E4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D77EEE6B-0A86-4DA6-915D-9EBD59C26E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D77EEE6B-0A86-4DA6-915D-9EBD59C26E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D77EEE6B-0A86-4DA6-915D-9EBD59C26E4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA9820C2-E02E-400A-A768-BAF45268B3A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9820C2-E02E-400A-A768-BAF45268B3A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA9820C2-E02E-400A-A768-BAF45268B3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA9820C2-E02E-400A-A768-BAF45268B3A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D77EEE6B-0A86-4DA6-915D-9EBD59C26E4D} = {92C19B56-D959-41C9-8FEC-695386E163B1}
+		{CA9820C2-E02E-400A-A768-BAF45268B3A6} = {92C19B56-D959-41C9-8FEC-695386E163B1}
+	EndGlobalSection
+EndGlobal

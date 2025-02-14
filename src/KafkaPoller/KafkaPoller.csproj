@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <PackageId>KafkaPoller</PackageId>
+        <Version>0.1.0$(VersionSuffix)</Version>
+        <Authors>Alexey Bogdan</Authors>
+        <Description>Kafka Poller is a .NET library for consuming messages from a Kafka topic with built-in support for a retry pattern. </Description>
+        <RepositoryUrl>https://github.com/AlexeyBogdan95/kafka-poller</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/AlexeyBogdan95/kafka-poller</PackageProjectUrl>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Confluent.Kafka" Version="2.8.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.2" />
+      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.2" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.2" />
+      <PackageReference Include="Polly" Version="8.5.2" />
+    </ItemGroup>
+
+</Project>
