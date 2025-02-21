@@ -37,6 +37,7 @@ services:
         kafka-topics --bootstrap-server kafka:9092 --topic healthcheck --create --if-not-exists --partitions 1 --replication-factor 1
         kafka-topics --bootstrap-server kafka:9092 --topic test.topic1 --create --if-not-exists --partitions 1 --replication-factor 1
         kafka-topics --bootstrap-server kafka:9092 --topic test.topic2 --create --if-not-exists --partitions 1 --replication-factor 1
+        kafka-topics --bootstrap-server kafka:9092 --topic test.topic3 --create --if-not-exists --partitions 1 --replication-factor 1
         kafka-topics --bootstrap-server kafka:9092 --topic test.consumer.redirect --create --if-not-exists --partitions 1 --replication-factor 1
         kafka-topics --bootstrap-server kafka:9092 --topic test.consumer.test.topic1.retry --create --if-not-exists --partitions 1 --replication-factor 1
       "

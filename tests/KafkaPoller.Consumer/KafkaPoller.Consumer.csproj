@@ -15,6 +15,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\src\KafkaPoller\KafkaPoller.csproj" />
+      <ProjectReference Include="..\KafkaPoller.Publisher\KafkaPoller.Publisher.csproj" />
     </ItemGroup>
 
 </Project>

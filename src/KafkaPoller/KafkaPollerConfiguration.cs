@@ -23,7 +23,7 @@ public static class KafkaPollerConfiguration
                     s.GetRequiredService<RedirectController>(),
                     s.GetRequiredService<KafkaPollerConfig>(),
                     s.GetRequiredService<ILogger<IConsumerLoop>>(),
-                    s.GetRequiredService<IConsumer>(),
+                    s.GetServices<IConsumer>().Single(x => x.GetType() == consumerConfig.ConsumerType),
                     consumerConfig.TopicName,
                     consumerConfig.RetryTopicName
                 )!;
@@ -36,7 +36,7 @@ public static class KafkaPollerConfiguration
                     var consumerLoopType = typeof(RetryConsumerLoop<>).MakeGenericType(consumerConfig.MessageType);
                     return Activator.CreateInstance(
                         consumerLoopType,
-                        s.GetRequiredService<IConsumer>(),
+                        s.GetServices<IConsumer>().Single(x => x.GetType() == consumerConfig.ConsumerType),
                         s.GetRequiredService<KafkaPollerConfig>(),
                         s.GetRequiredService<ILogger<IConsumerLoop>>(),
                         consumerConfig.RetryTopicName

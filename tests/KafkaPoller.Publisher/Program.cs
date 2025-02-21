@@ -14,8 +14,7 @@ for (var i = 0; i < 100; i++)
             Value = new MessageOne
             {
                 Val = i
-            },
-            Headers = [new Header("id", [Convert.ToByte(i)])]
+            }
         },
         CancellationToken.None
     );
@@ -35,8 +34,27 @@ for (var i = 0; i < 200; i++)
             Value = new MessageTwo
             {
                 Text = $"Message{i}"
-            },
-            Headers = [new Header("id", [Convert.ToByte(i)])]
+            }
+        },
+        CancellationToken.None
+    );
+}
+
+using var producerMessageThree = new ProducerBuilder<string, MessageThree>(new ProducerConfig { BootstrapServers = "localhost:29092" })
+    .SetValueSerializer(new JsonSerializer<MessageThree>())
+    .Build();
+
+
+for (var i = 0; i < 300; i++)
+{
+    await producerMessageThree.ProduceAsync("test.topic3",
+        new Message<string, MessageThree>
+        {
+            Key = Guid.NewGuid().ToString(),
+            Value = new MessageThree
+            {
+                Value = i + 30m
+            }
         },
         CancellationToken.None
     );

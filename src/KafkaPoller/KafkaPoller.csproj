@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <PackageId>KafkaPoller</PackageId>
-        <Version>0.1.0$(VersionSuffix)</Version>
+        <Version>0.1.1$(VersionSuffix)</Version>
         <Authors>Alexey Bogdan</Authors>
         <Description>Kafka Poller is a .NET library for consuming messages from a Kafka topic with built-in support for a retry pattern. </Description>
         <RepositoryUrl>https://github.com/AlexeyBogdan95/kafka-poller</RepositoryUrl>
