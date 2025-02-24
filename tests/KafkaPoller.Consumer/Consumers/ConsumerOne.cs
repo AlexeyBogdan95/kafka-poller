@@ -39,7 +39,6 @@ public class ConsumerOne: IConsumer<MessageOne>, IConsumer<MessageTwo>
         return Task.CompletedTask;
     }
 
-
     public string GetUniqueId(Message<string, MessageTwo> message)
     {
         return message.Key;

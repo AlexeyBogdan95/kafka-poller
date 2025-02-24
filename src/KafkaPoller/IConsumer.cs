@@ -12,10 +12,6 @@ public interface IConsumer;
 
 public interface IConsumer<T> :IConsumer
 {
-    public Task Consume(Message<string, T> message, CancellationToken cancellationToken);
-
-    public string GetUniqueId(Message<string, T> message)
-    {
-        return message.Key;
-    }
+    Task Consume(Message<string, T> message, CancellationToken cancellationToken);
+    string GetUniqueId(Message<string, T> message);
 }

@@ -10,4 +10,9 @@ public class ConsumerTwo: IConsumer<MessageThree>
         Console.WriteLine($"Message three: {message.Value.Value}");
         return Task.CompletedTask;
     }
+
+    public string GetUniqueId(Message<string, MessageThree> message)
+    {
+        return message.Key;
+    }
 }
