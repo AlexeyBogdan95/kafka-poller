@@ -14,8 +14,16 @@ public class MessageTwo
 
 public class ConsumerOne: IConsumer<MessageOne>, IConsumer<MessageTwo>
 {
+    private bool _flag;
+
     public Task Consume(Message<string, MessageOne> message, CancellationToken token)
     {
+
+        if (!_flag)
+        {
+            _flag = true;
+            throw new ApplicationException();
+        }
         Console.WriteLine($"MessageOne: {message.Value.Val}");
         return Task.CompletedTask;
     }

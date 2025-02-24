@@ -45,14 +45,14 @@ internal class ConsumerLoop<TMessage> : IConsumerLoop where TMessage : class
                         GroupId = _config.ConsumerGroup,
                         EnableAutoCommit = true,
                         EnableAutoOffsetStore = false,
-                        AutoOffsetReset = AutoOffsetReset.Earliest
+                        AutoOffsetReset = _config.AutoResetEvent
                     }
                     : new ConsumerConfig
                     {
                         SecurityProtocol = SecurityProtocol.SaslSsl,
                         BootstrapServers = _config.BootstrapServers,
                         GroupId = _config.ConsumerGroup,
-                        AutoOffsetReset = AutoOffsetReset.Latest,
+                        AutoOffsetReset = _config.AutoResetEvent,
                         SaslMechanism = SaslMechanism.ScramSha512,
                         SaslUsername = _config.Username,
                         SaslPassword = _config.Password,
